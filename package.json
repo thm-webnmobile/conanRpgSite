@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/thm-webnmobile/conanRpgSite#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "btoa": "^1.2.1",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.1"
