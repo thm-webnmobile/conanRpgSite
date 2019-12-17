@@ -1,0 +1,346 @@
+<template>
+  <div id="app">
+    <b-navbar tag="nav" type="dark" variant="dark" sticky="true" >
+      <b-navbar-brand tag="h1" v-on:click="state=0">
+        Conan Rollenspiele
+      </b-navbar-brand>
+      <b-navbar-nav>
+        <b-nav-item v-on:click="state=0">Home</b-nav-item>
+        <b-nav-item v-on:click="state=1">Universum</b-nav-item>
+        <b-nav-item v-on:click="state=2">Pen and Paper</b-nav-item>
+        <b-nav-item v-on:click="state=3">Conan Exiles</b-nav-item>
+        <b-nav-item v-on:click="state=4">Profil</b-nav-item>
+      </b-navbar-nav>
+    </b-navbar>
+
+    <div class="main">
+      <b-container class="Home" v-if="state===0">
+        Willkommen auf der Conan Rollenspiel Seite, der Seite für Spieler, Spielleiter, Clans und Co..
+        Informationen über, sowie Forum und nützliche Tools für Conan Rollenspiele.
+      </b-container>
+      <b-container class="Universum" v-if="state===1">
+
+        <p>
+          Hier findest du eine kleine Übersicht über das Universum von Conan: Wo leben welche Völker und was macht sie aus?
+          Finde es mit unserer interaktiven Karte heraus!
+        </p>
+        <svg height="560" width="600" xmlns="http://www.w3.org/2000/svg" viewBox="0 -20 300 280">
+          <desc> Karte von Hyboria</desc>
+          <g fill="#d3d3d3" class="AUS" id="Australia">
+            <text id="headline" x="0" y="0"> Conan</text>
+            <text id="headline" x="0" y="20">Hyboria</text>
+            <g id="NSW" class="NSW">
+              <path id="NSW-mainland" class="NSW" d="M271 130L270 130 270 131 269 131 268 131 268 132 268 133 269 133 268 134 268 134 267 135 266 134 266 134 265 134 264 135 264 136 263 136 263 135 263 134 262 134 262 133 261 132 260 132 259 132 258 132 257 132 257 132 256 131 255 131 254 132 253 131 251 131 251 131 250 132 249 132 249 133 248 133 248 134 247 134 194 134 194 179 194 179 194 180 195 179 197 180 198 180 200 180 202 180 204 182 204 184 205 185 205 184 207 183 207 183 209 183 210 184 211 187 212 189 213 189 215 189 217 191 217 192 219 193 220 194 222 194 221 192 222 192 223 192 223 192 225 192 227 192 228 192 229 193 230 193 231 192 232 192 233 193 235 193 236 193 237 192 238 192 239 192 239 192 241 192 241 194 241 195 242 196 242 197 242 198 250 202 252 202 253 203 253 203 253 204 253 204 254 203 254 201 255 201 255 201 255 200 254 200 254 199 254 198 254 198 255 197 256 193 255 191 256 190 255 190 256 189 256 188 257 188 258 184 260 184 259 183 260 182 260 183 260 183 260 182 259 182 260 182 259 181 260 181 261 179 260 179 261 178 261 177 263 175 262 175 263 175 262 174 263 174 263 173 263 174 262 173 263 173 263 173 263 173 264 171 264 171 263 172 263 171 263 171 263 171 263 171 264 170 264 171 264 170 265 169 264 169 265 169 266 167 265 168 265 167 266 167 266 166 266 167 267 166 266 165 267 165 267 166 269 164 269 164 268 165 267 165 268 164 268 164 269 164 269 164 269 164 270 163 272 162 272 160 271 160 271 161 270 160 271 160 271 160 272 159 273 157 275 151 275 147 276 143 277 142 277 139 277 138 277 139 277 138 279 135 278 135 279 134 279 133 278 132 278 130 278 130 277 130 276 130 276 130 275 131 274 130 273 131 272 130 271 130zM246 186C246 186 247 186 247 186 248 186 248 187 248 187 248 187 248 187 247 188 247 188 246 189 246 190 246 190 246 191 245 191 245 191 245 191 245 190 244 190 244 189 244 188 244 188 244 187 244 187 245 186 245 186 246 186z"
+              />
+              <text x="200" y="170">New South Wales</text>
+            </g>
+            <g id="NT" class="NT">
+              <path id="Melville-Island" class="NT" d="M125 13L127 14 129 13 130 11 131 12 131 11 131 11 131 9 130 9 129 9 129 10 129 11 129 9 128 10 128 10 128 11 128 10 128 10 127 10 126 10 126 11 126 11 125 10 125 10 125 10 125 10 125 10 125 9 123 8 124 11 123 11 124 11 123 11 124 10 123 10 122 11 123 11 122 11 122 12 122 12 122 13 122 12 122 12 121 12 121 13 121 13 125 13 125 13zM114 34L114 117 173 117 173 44 173 43 171 43 168 41 167 41 167 41 166 41 166 41 166 40 163 39 162 37 159 35 159 36 159 35 158 35 157 34 157 33 158 32 159 30 160 29 161 28 162 26 161 26 160 26 160 24 161 24 161 24 160 24 161 23 161 23 161 23 162 22 162 23 162 22 163 22 163 21 164 23 163 23 164 23 165 21 164 21 165 21 164 20 165 20 165 19 165 20 165 19 166 19 166 18 166 17 166 17 166 18 168 17 166 15 166 16 166 16 165 16 165 14 164 14 165 13 162 15 164 16 163 17 162 17 162 17 161 18 161 17 161 17 161 16 161 16 161 16 161 15 160 16 159 16 159 16 161 14 158 15 158 15 157 15 156 16 157 16 155 16 156 16 153 15 153 14 152 15 149 14 149 16 149 14 149 14 148 14 148 13 147 14 146 13 147 13 146 12 144 13 145 13 144 13 144 12 143 13 143 12 142 12 141 10 140 10 140 10 140 10 139 11 137 9 137 10 137 8 136 9 136 9 135 8 135 10 136 10 135 10 135 9 134 8 134 9 133 9 133 9 133 10 134 10 134 10 134 10 135 10 135 11 136 11 138 10 138 11 138 11 138 11 138 11 138 11 138 11 138 12 139 12 139 12 138 13 139 13 139 14 138 15 139 15 138 15 137 15 137 17 137 16 136 16 136 15 135 16 134 16 131 16 130 16 130 14 129 16 128 15 128 17 127 17 126 17 128 18 127 18 127 18 127 19 126 18 126 18 126 18 126 17 125 17 125 18 125 18 126 19 125 19 125 20 124 18 123 19 124 19 123 19 123 20 122 21 122 22 123 24 123 23 121 25 120 24 120 24 120 24 119 26 120 26 119 27 119 28 119 28 118 28 119 29 118 29 118 29 118 29 117 30 117 31 117 31 118 31 118 32 119 31 119 32 120 31 119 32 118 33 119 33 119 33 119 33 119 33 119 33 120 33 119 34 121 33 121 33 120 33 121 34 120 34 119 34 119 34 119 34 119 34 119 36 118 36 118 34 117 34 117 35 116 34 116 34 116 34 116 34 116 35 116 35 116 36 116 36 116 36 116 36 115 37 116 36 115 35 115 35 115 34 115 35 115 34 114 34zM164 29L165 30 167 30 167 29 167 29 166 29 166 28 166 28 166 27 167 27 167 26 167 27 166 27 166 26 166 26 165 26 165 26 164 27 164 28 164 29 163 30 164 29z"
+              />
+              <text x="115" y="70">Nord-Territorium</text>
+            </g>
+            <g id="QLD" class="QLD">
+              <path id="QLD-mainland" class="QLD" d="M205 5L204 6 203 7 202 7 202 8 202 11 201 11 201 13 202 13 201 13 201 14 201 15 202 14 201 15 201 15 201 16 200 14 199 16 200 16 199 16 198 18 199 18 199 17 200 17 199 18 200 18 201 18 200 19 201 19 201 19 201 20 200 19 200 20 198 21 199 23 199 23 199 23 199 23 200 24 199 24 198 27 199 29 198 31 199 35 198 39 197 41 197 42 196 46 194 49 194 51 192 53 188 54 188 53 187 53 185 52 184 51 183 51 182 49 181 48 179 47 175 47 173 44 173 117 194 117 194 134 247 134 248 134 248 133 249 133 249 132 250 132 251 131 251 131 253 131 254 132 255 131 256 131 257 132 257 132 258 132 259 132 260 132 261 132 262 133 262 134 263 134 263 135 263 136 264 136 264 135 265 134 266 134 266 134 267 135 268 134 268 134 269 133 268 133 268 132 268 131 269 131 270 131 270 130 271 130 272 130 273 131 274 130 275 131 276 130 276 130 277 130 278 130 278 130 279 129 278 129 277 126 277 124 276 123 275 124 276 123 275 123 276 122 275 121 276 121 275 120 275 120 276 121 276 119 275 120 276 118 275 118 276 116 275 116 276 112 276 112 275 112 275 113 275 112 274 112 275 111 274 111 274 109 274 109 273 109 274 109 274 108 272 107 272 107 271 105 271 104 271 104 270 104 271 104 269 103 269 103 268 102 267 99 266 99 267 98 266 99 266 98 266 98 266 99 265 99 265 99 264 99 264 99 261 95 261 96 260 95 260 95 260 93 260 93 260 90 260 90 260 89 260 88 260 88 259 88 259 87 260 88 260 87 259 86 259 87 259 86 259 86 258 87 259 88 259 88 259 89 256 86 255 85 255 85 254 86 255 88 255 89 255 88 253 87 252 88 253 87 252 87 252 86 252 86 251 86 252 86 251 83 251 80 251 81 250 80 250 80 250 79 249 79 249 78 249 78 250 77 249 76 248 77 248 76 247 76 247 75 247 75 246 75 246 74 246 73 246 73 246 73 246 73 247 73 248 73 246 71 246 72 246 71 245 71 245 70 244 70 244 70 244 71 244 71 243 70 243 70 243 69 242 69 241 69 240 67 240 67 240 69 239 68 238 67 239 67 237 65 237 66 236 66 235 64 234 65 234 65 233 64 231 63 230 62 230 59 229 59 228 57 229 53 228 53 228 51 227 49 228 48 227 48 224 45 224 44 224 44 224 42 224 41 223 39 223 38 224 37 224 36 223 37 223 36 224 34 223 34 223 34 221 33 221 32 219 32 218 29 217 30 216 30 215 31 214 31 213 31 213 28 211 26 212 24 211 22 211 20 210 20 211 18 210 18 210 17 208 17 208 15 210 14 208 14 208 14 207 13 207 10 206 7 205 7 205 7 205 7 204 7 205 6 205 6 205 5zM276 104L276 105 275 107 275 107 275 109 274 110 275 111 277 106 277 105 277 103 276 104zM184 46L184 46 185 45 185 46 186 45 185 44 183 45 182 46 183 47 184 46z"
+              />
+              <text x="200" y="90">Queensland</text>
+            </g>
+            <path id="WA" class="WA" d="M114 156L114 117 114 117 114 34 113 34 112 33 111 33 110 33 111 34 111 35 110 34 111 35 111 35 110 35 110 35 110 36 109 34 109 35 110 38 110 38 109 37 108 36 108 38 108 38 108 37 108 37 108 37 108 35 109 34 108 34 109 34 109 33 109 33 108 32 107 32 105 29 104 28 104 27 103 27 103 28 103 27 102 28 102 27 102 28 101 27 100 26 100 27 99 26 100 27 100 28 100 28 99 28 99 28 99 29 99 28 98 30 98 28 97 29 98 27 96 28 96 29 97 29 96 30 96 29 95 29 96 28 95 28 96 28 95 28 94 28 94 28 94 28 94 28 95 29 95 30 95 30 94 31 95 31 94 31 94 33 93 32 93 31 92 31 92 31 92 32 92 30 92 30 92 29 92 32 91 31 90 32 90 32 90 32 90 31 89 32 90 32 88 33 89 34 90 34 89 34 90 35 90 34 91 35 90 36 91 36 90 36 89 35 89 36 88 34 87 35 88 36 86 36 87 36 87 37 88 36 87 37 87 37 88 37 88 37 89 37 88 38 89 39 88 38 88 38 87 37 86 37 86 37 86 37 85 38 85 38 85 38 84 38 84 38 83 39 84 39 83 39 84 42 84 41 84 41 85 41 84 41 85 40 86 40 85 40 86 40 85 41 85 42 85 42 84 43 85 43 84 43 84 42 83 44 85 44 86 44 84 44 83 44 83 44 83 45 82 45 83 45 82 44 82 44 80 43 81 44 80 44 81 44 80 44 80 44 79 43 79 43 79 43 80 43 79 43 79 43 78 43 78 43 78 43 78 43 78 44 79 44 79 44 78 44 79 44 79 44 78 44 77 44 79 45 77 45 77 46 78 45 78 46 77 46 79 47 79 48 80 47 80 47 81 47 80 48 80 49 79 49 80 50 79 49 78 49 79 50 78 50 78 51 78 52 77 51 76 49 75 48 75 46 75 46 74 46 74 45 75 45 74 44 74 44 72 46 73 47 71 47 71 47 72 48 71 48 71 48 70 49 69 49 70 50 69 50 68 52 69 54 69 55 70 56 70 56 67 59 66 59 66 60 66 60 65 60 65 61 64 63 62 66 56 69 54 69 53 69 52 70 51 70 50 70 49 69 49 70 49 70 49 70 48 69 48 70 46 72 42 72 42 72 40 73 40 73 40 73 39 74 38 75 38 74 37 75 35 75 35 74 34 75 33 75 33 74 33 73 33 73 32 75 32 75 31 75 29 76 29 75 29 76 27 77 26 79 25 79 24 80 20 82 18 83 18 84 18 84 17 84 17 85 17 86 17 86 17 86 17 86 16 87 16 87 15 87 15 86 15 86 14 85 15 82 14 83 12 88 13 91 12 92 13 95 10 98 10 101 12 104 11 105 12 106 13 107 15 112 16 112 16 113 15 113 16 115 14 116 13 115 13 112 13 113 12 114 12 112 11 109 10 111 10 111 10 110 11 114 13 115 13 117 12 118 11 116 11 118 11 115 11 116 10 113 10 116 9 115 9 113 9 115 8 114 14 122 15 126 15 127 15 129 17 132 18 133 18 134 20 136 21 139 20 143 20 144 21 147 25 156 26 159 27 158 27 159 26 159 26 160 25 161 26 162 25 164 25 169 23 172 22 172 21 171 21 175 21 178 22 177 23 177 25 178 27 181 30 182 30 181 31 182 30 182 31 183 32 182 33 183 36 183 38 184 39 183 40 184 41 183 40 183 40 182 41 182 40 183 42 183 42 182 43 182 44 181 46 180 46 179 47 178 46 178 49 179 49 178 50 178 50 177 51 178 50 177 53 174 54 174 57 174 58 174 63 173 66 174 67 173 68 175 69 175 70 174 71 174 72 174 74 173 75 174 75 175 77 174 78 174 81 171 82 168 82 167 86 165 94 161 96 161 99 161 102 161 109 159 114 156z"
+            />
+            <text x="30" y="100">Cimmerier</text>
+          </g>
+          <g id="VIC" class="VIC">
+            <path id="vic-mainland" class="VIC" d="M87 44L86 45 86 44 86 44 87 44zM9 113L7 109 7 111 9 114 9 113zM253 204L253 203 253 203 252 202 250 202 242 198 242 197 242 196 241 195 241 194 241 192 239 192 239 192 238 192 237 192 236 193 235 193 233 193 232 192 231 192 230 193 229 193 228 192 227 192 225 192 223 192 223 192 222 192 221 192 222 194 220 194 219 193 217 192 217 191 215 189 213 189 212 189 211 187 210 184 209 183 207 183 207 183 205 184 205 185 204 184 204 182 202 180 200 180 198 180 197 180 195 179 194 180 194 179 194 208 195 208 197 210 197 211 198 211 198 211 200 210 202 211 204 210 212 215 215 211 217 210 219 210 219 208 218 209 217 208 218 208 221 206 222 209 221 210 219 210 221 212 222 211 223 211 223 209 224 209 225 211 224 211 224 212 225 213 227 213 227 213 226 213 227 215 228 214 229 215 229 214 230 216 231 217 231 214 230 215 230 213 232 213 234 213 238 208 241 207 238 208 240 207 239 207 239 206 240 207 242 206 242 206 251 205 253 204z"
+            />
+            <text x="200" y="203">Victoria</text>
+          </g>
+          <g id="SA" class="SA">
+            <path id="SA-mainland" class="SA" d="M194 208L194 179 194 179 194 134 194 117 173 117 173 117 114 117 114 156 114 156 121 155 122 155 126 156 129 154 133 156 136 159 138 159 137 158 138 158 139 158 142 160 144 160 144 160 144 159 145 160 145 159 147 162 147 162 147 163 148 162 149 162 150 164 149 165 149 164 148 164 149 165 148 166 149 166 149 167 150 168 149 167 150 168 151 168 152 168 151 168 152 168 152 168 153 170 153 171 156 174 157 179 157 179 157 179 158 179 157 180 156 179 157 179 156 178 156 178 155 179 156 179 159 182 160 181 161 183 161 180 160 181 160 181 161 179 161 178 162 179 162 177 165 174 168 172 167 173 167 172 168 172 169 172 171 168 172 166 173 167 173 162 174 165 174 167 175 167 173 169 174 171 172 174 171 175 171 176 171 177 171 178 171 178 171 179 171 182 170 182 168 182 167 185 169 185 171 183 172 184 173 184 172 183 174 181 174 179 175 176 178 181 178 181 178 181 178 181 177 185 175 188 178 188 179 187 180 187 184 189 180 187 183 189 185 192 184 190 185 190 186 193 185 192 187 197 187 198 186 199 187 200 186 201 188 203 190 206 190 207 192 208 194 208zM173 189L173 188 172 188 172 187 165 189 165 190 166 191 168 191 169 191 171 191 172 191 172 190 175 190 175 189 174 188 173 189z"
+            />
+            <text x="130" y="140">Südaustralien</text>
+          </g>
+          <g id="TAS" class="TAS">
+            <path id="King-Currie-Island" class="TAS" d="M214 221L214 222 214 225 214 225 214 226 215 225 215 222 214 221zM240 224L240 225 241 225 242 227 244 226 243 225 243 226 243 225 243 224 243 224 241 222 240 224 240 224zM239 251L239 252 240 252 239 253 240 253 240 253 240 252 241 253 241 251 240 252 239 251zM243 239L243 237 244 236 243 235 244 233 242 231 241 231 240 232 239 232 238 233 237 233 235 234 235 233 233 234 234 235 234 235 233 234 232 235 232 235 231 234 230 235 225 232 223 232 223 231 223 232 222 231 222 232 219 230 219 232 219 233 220 237 221 239 221 240 223 242 223 244 223 244 224 246 225 246 224 247 224 246 222 244 223 248 224 248 225 251 226 252 227 254 227 254 227 254 227 253 228 254 230 254 229 255 228 254 228 255 227 255 228 256 230 256 232 256 232 256 233 257 234 257 235 256 234 255 235 255 235 254 234 254 235 254 234 253 235 252 235 253 235 253 235 253 235 253 236 254 236 251 237 252 237 250 236 249 237 251 238 250 237 252 238 251 238 250 239 250 238 249 239 249 239 250 240 250 241 248 240 247 241 247 241 245 241 245 242 243 243 243 242 243 243 242 242 243 243 243 243 245 244 244 243 243 243 239zM241 228L243 228 244 229 244 228 244 227 241 228z"
+            />
+            <text x="250" y="245">Tasmanien</text>
+          </g>
+          <g id="ACT" class="ACT">
+            <path id="ACT-territory" class="ACT" d="M246 186C246 186 247 186 247 186 248 186 248 187 248 187 248 187 248 187 247 188 247 188 246 189 246 190 246 190 246 191 245 191 245 191 245 191 245 190 244 190 244 189 244 188 244 188 244 187 244 187 245 186 245 186 246 186z"
+            />
+            <text x="250" y="185">Canberra</text>
+            <text x="200" y="200">Australian Capital Territory</text>
+          </g>
+        </svg>
+        <h3>Cimmerier</h3>
+        <p>
+          Die Cimmerier, barbarisch und kriegerisch.
+          Zu Fuß führen sie häufig brutale Überfälle auf ihre Nachbarn im Osten, Norden und Süden durch.
+          Sie sind die Nachkommen von Kolonisten aus Atlantis, die es geschafft haben, die große Katastrophe zu überstehen,
+          die Atlantis zerstört und ins Meer gespült hatte.
+
+          Nach dem Fall ihrer ehemaligen Zivilisation entwickelten sie sich durch Zeiten andauernder Kämpfe gegen die in Höhlenmenschen zurück.
+          Sie vergaßen ihre Kultur Technik und alles, was sie zivilisiert erschienen ließ und wurden stattdessen als die Cimmerier bekannt.
+          Im aktuellen Zeitalter befinden sich große Teile ihrer Gesellschaft noch in der Steinzeit,
+          auch wenn sie bisweilen Werkzeuge und Waffen aus Eisen benutzen.
+          Conan der Barbar selbst ist ein Cimmerier, weshalb er auch als Conan der Cimmerier bezeichnet wird.
+        </p>
+      </b-container>
+
+      <b-container class="PNP" v-if="state===2">
+        <p>
+          Auf diesen Seiten findest du Neues über das "Pen and Paper" Rollenspiel von Conan.
+          Außerdem kannst du nach Gruppen suchen, oder deine eigene Gruppe für das Spiel erstellen
+          und all eure kommenden Sitzungen über unsere Seite planen.
+        </p>
+        <carousel></carousel>
+      </b-container>
+
+      <b-container class="Exiles" v-if="state===3">
+        <p>
+          Suche, finde und gründe Clans und lass dir zeigen, wo aktuell eure Basis steht.
+        </p>
+        <carousel></carousel>
+      </b-container>
+
+      <b-container class="Profil" v-if="state===4">
+        <b-row>
+          <b-col>
+            <img alt="Profilbild" src="../src/assets/Platzhalter.png">
+            <p>Max Musterspieler</p>
+          </b-col>
+          <b-col>
+            <div class="aktiveClans">
+              <p>
+                Aktiv in folgenden Clans:
+              </p>
+              <ul >
+                <li>Clan 1</li>
+                <li>Clan 2</li>
+              </ul>
+            </div>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
+
+    <footer id="footer" class="footer-1">
+      <div class="main-footer widgets-dark typo-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="widget subscribe no-box">
+                <h5 class="widget-title">ConanRpgSite</h5>
+                <p>Conan Server, News und Community </p>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="widget no-box">
+                <h5 class="widget-title">Quick Links</h5>
+                <ul class="thumbnail-widget">
+                  <li>
+                    <div class="thumb-content"><a href="#." v-on:click="state=0">Home</a></div>
+                  </li>
+                  <li>
+                    <div class="thumb-content"><a href="#." v-on:click="state=1">Universum</a></div>
+                  </li>
+                  <li>
+                    <div class="thumb-content"><a href="#." v-on:click="state=2">Pen and Paper</a></div>
+                  </li>
+                  <li>
+                    <div class="thumb-content"><a href="#." v-on:click="state=3">Conan Exiles</a></div>
+                  </li>
+                  <li>
+                    <div class="thumb-content"><a href="#." v-on:click="state=4">Profil</a></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div class="widget no-box">
+                <h5 class="widget-title">Loslegen</h5>
+                <p>Werde Teil der Community</p>
+                <a class="btn" href="#." target="_blank">Jetzt registrieren!</a>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-3">
+
+              <div class="widget no-box">
+                <h5 class="widget-title">Kontakt</h5>
+
+                <p><a href="conanRpgSite@iem.thm.de">conanRpgSite@iem.thm.de</a></p>
+                <ul class="social-footer2">
+                  <li class=""><a title="youtube" href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                  <li class=""><a title="Facebook" href="https://www.facebook.com/" target="_blank" ><i class="fab fa-facebook-f"></i></a></li>
+                  <li class=""><a title="Twitter" href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                  <li class=""><a title="instagram" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <p>Copyright ConanRpgSite © 2019. Alle Rechte vorbehalten.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!--<PostComponent/> -->
+</template>
+
+<script>
+  import 'bootstrap/dist/css/bootstrap.css'
+  import 'bootstrap-vue/dist/bootstrap-vue.css'
+  import Carousel from './components/Carousel'
+  export default {
+    name: 'app',
+    data: function() {
+      return {
+        state:0
+      }
+    },
+    components: {
+      Carousel
+      },
+    mounted() {
+      let fontAwesomeScript = document.createElement('script')
+      fontAwesomeScript.setAttribute('src', 'https://kit.fontawesome.com/013612868e.js')
+      fontAwesomeScript.setAttribute('async', 'async')
+      fontAwesomeScript.setAttribute('defer', 'defer')
+      fontAwesomeScript.setAttribute('crossorigin', 'anonymous')
+      document.head.appendChild(fontAwesomeScript)
+    }
+  }
+</script>
+
+<style>
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+ul{
+list-style:none;
+}
+
+/*====================
+SVG
+====================== */
+svg {
+  background-color: #e6f2f7;
+}
+
+path {
+  fill: #c32e04;
+  stroke: #333;
+  stroke-width: 0.4;
+}
+
+path:hover {
+  fill: #dfac20;
+}
+
+text {
+  opacity: 0;
+  font-size: 8px;
+  fill: black;
+  pointer-events: none;
+}
+
+path:hover ~ text {
+  opacity: 1;
+}
+
+#headline {
+  opacity: 1;
+  font-size: 16px;
+  fill: #3983ab;
+}
+/*====================
+Footer
+====================== */
+
+/* Main Footer */
+footer .main-footer{	padding: 20px 0;	background: #252525;}
+footer ul{	padding-left: 0;	list-style: none;}
+
+/* Copy Right Footer */
+.footer-copyright {	background: #343a40;	padding: 5px 0;}
+.footer-copyright .logo {    display: inherit;}
+.footer-copyright nav {    float: right;    margin-top: 5px;}
+.footer-copyright nav ul {	list-style: none;	margin: 0;	padding: 0;}
+.footer-copyright nav ul li {	border-left: 1px solid #505050;	display: inline-block;	line-height: 12px;	margin: 0;	padding: 0 8px;}
+.footer-copyright nav ul li a{	color: #969696;}
+.footer-copyright nav ul li:first-child {	border: medium none;	padding-left: 0;}
+.footer-copyright p {	color: #969696;	margin: 2px 0 0;}
+
+/* Footer Top */
+.footer-top{	background: #343a40;	padding-bottom: 30px;	margin-bottom: 30px;	border-bottom: 3px solid #343a40;}
+
+/* Footer transparent */
+footer.transparent .footer-top, footer.transparent .main-footer{	background: transparent;}
+footer.transparent .footer-copyright{	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3) ;}
+
+/* Footer light */
+footer.light .footer-top{	background: #f9f9f9;}
+footer.light .main-footer{	background: #f9f9f9;}
+footer.light .footer-copyright{	background: none repeat scroll 0 0 rgba(255, 255, 255, 0.3) ;}
+
+/* Footer 4 */
+.footer- .logo {    display: inline-block;}
+
+/*====================
+	Widgets
+====================== */
+.widget{	padding: 20px;	margin-bottom: 40px;}
+.widget.widget-last{	margin-bottom: 0px;}
+.widget.no-box{	padding: 0;	background-color: transparent;	margin-bottom: 40px;
+    box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none;}
+.widget.subscribe p{	margin-bottom: 18px;}
+.widget li a{	color: #ffffff;}
+.widget li a:hover{	color: #4b92dc;}
+.widget-title {margin-bottom: 20px;}
+.widget .badge{	float: right;	background: #7f7f7f;}
+
+.typo-light h1,
+.typo-light h2,
+.typo-light h3,
+.typo-light h4,
+.typo-light h5,
+.typo-light h6,
+.typo-light p,
+.typo-light div,
+.typo-light small{	color: #fff;}
+
+ul.social-footer2 {	margin: 0;padding: 0;	width: auto;}
+ul.social-footer2 li {display: inline-block;padding: 0;}
+ul.social-footer2 li a:hover {background-color:#ffffff;}
+ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: center;}
+.btn{background-color: #000000; color:#fff;}
+.btn:hover, .btn:focus, .btn.active {background: #4b92dc;color: #fff;
+    -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    -webkit-transition: all 250ms ease-in-out 0s;
+    -moz-transition: all 250ms ease-in-out 0s;
+    -ms-transition: all 250ms ease-in-out 0s;
+    -o-transition: all 250ms ease-in-out 0s;
+    transition: all 250ms ease-in-out 0s;
+
+}
+</style>
