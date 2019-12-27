@@ -1,6 +1,7 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const btoa = require('btoa');
+const dotenv = require('dotenv').config({ path: '/server/.env' });
 const { catchAsync } = require('../../utils');
 
 const router = express.Router();
