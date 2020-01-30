@@ -6,9 +6,8 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.get('/', (req, res) => {
-    res.status(200).sendFile(path.join(__dirname, 'index.html'));
+    res.status(200).sendFile(path.join(__dirname, '..','client', 'src', 'main.js'));
 });
-  
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
 
@@ -29,4 +28,4 @@ app.use((err, req, res, next) => {
           error: err.message,
         });
     }
-  });
+});
