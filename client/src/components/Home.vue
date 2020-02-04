@@ -4,13 +4,14 @@
         Wir bieten sowohl Informationen über Conan Rollenspiele, als auch ein Forum und einige nützliche Tools um euren Spielspaß zu verdoppeln.<br/>
         Starte einfach gleich durch: Woran hast du am meisten Interesse?
         <ul>
-            <li><button v-on:click="state=1">Conan Universum</button></li>
-            <li><button v-on:click="state=2">Conan RPG</button></li>
-            <li><button v-on:click="App.state=3">Conan Exiles</button></li>
+            <li><button v-on:click="$emit('update-state', 1)">Conan Universum</button></li>
+            <li><button v-on:click="$emit('update-state', 2)">Conan RPG</button></li>
+            <li><button v-on:click="$emit('update-state', 3)">Conan Exiles</button></li>
         </ul>
 
         <div class="DiscordLoginButton">
-            <a href="../../../server/routes/api/discord/login">Login through discord</a>
+
+            <a href="http://localhost:5000/routes/api/discord/login">Login through discord</a>
         </div>
     </b-container>
 </template>
@@ -18,6 +19,9 @@
 <script>
     export default {
         name: "Home",
+        props: {
+            state: Number
+        }
     }
 
 </script>

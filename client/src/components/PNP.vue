@@ -8,10 +8,13 @@
         <carousel></carousel>
     </b-container>
 </template>
-
 <script>
+    import Carousel from "./Carousel";
     export default {
-        name: "PNP"
+        name: "PNP",
+        components: {
+            Carousel
+        }
     }
 </script>
 

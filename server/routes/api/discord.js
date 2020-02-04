@@ -27,7 +27,7 @@ router.get('/callback', catchAsync(async (req, res) => {
       },
     });
   const json = await response.json();
-  res.redirect(`/?token=${json.access_token}`);
+  res.redirect(`http://localhost:8080/?token=${json.access_token}`);
 }));
 
 

@@ -8,8 +8,12 @@
 </template>
 
 <script>
+    import Carousel from "./Carousel";
     export default {
-        name: "Exiles"
+        name: "Exiles",
+        components: {
+            Carousel
+        }
     }
 </script>
 
