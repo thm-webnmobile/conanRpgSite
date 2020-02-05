@@ -8,7 +8,7 @@
 </template>
 
 <script>
-    import Carousel from "./Carousel";
+    import Carousel from "./CarouselExiles";
     export default {
         name: "Exiles",
         components: {
