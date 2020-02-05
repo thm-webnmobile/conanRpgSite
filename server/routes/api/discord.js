@@ -10,6 +10,9 @@ const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const port = process.env.PORT || 5000;
 const redirect = encodeURIComponent(`http://localhost:${port}/routes/api/discord/callback`);
+var accesstoken;
+var yourUserId;
+var yourUserName;
 
 router.get('/login', (req, res) => {
   res.redirect(`https://discordapp.com/api/oauth2/authorize?client_id=${CLIENT_ID}&scope=identify&response_type=code&redirect_uri=${redirect}`);
@@ -43,13 +46,15 @@ router.get('/callback', catchAsync(async (req, res) => {
       },
     });
   const json = await response.json();
-  res.redirect(`http://localhost:8080/?token=${json.access_token}`);
+  accesstoken = json.access_token;
+  res.redirect(`./getUser`);
 }));
 
-router.post('/callback', catchAsync(async (req, res) => {
+router.get('/getUser', catchAsync(async (req, res) => {
   const fetchDiscordUserInfo = await fetch('http://discordapp.com/api/users/@me', {
     headers: {
-      Authorization: `Bearer ${json.access_token}`,
+      Authorization: `Bearer ${accesstoken}`,
+      //Authorization: `Bearer ${json.access_token}`,
     }
   });
   const userInfo = await fetchDiscordUserInfo.json();
@@ -57,8 +62,10 @@ router.post('/callback', catchAsync(async (req, res) => {
   yourUserId = `${userInfo.id}`;
   yourUserName = `${userInfo.username}`;
 
-  // or simply...
+  // Test
   console.log(userInfo);
+
+  res.redirect(`http://localhost:8080/`);
 }));
 
 module.exports = router;
