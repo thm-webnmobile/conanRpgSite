@@ -1223,6 +1223,7 @@ e
         color: #ffffff;
         background-color: #382517;
         margin: 30px;
+        margin-top: -45%;
     }
     .hintergrund{
         background-color: #382517;
