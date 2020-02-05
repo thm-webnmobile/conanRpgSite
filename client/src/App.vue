@@ -1,30 +1,31 @@
 <template>
   <div id="app">
-    <b-navbar tag="nav" type="dark" variant="dark" sticky>
-      <b-navbar-brand tag="h1" v-on:click="state=0">
-        Conan RPG Site
-      </b-navbar-brand>
-        <b-navbar-nav>
-          <b-collapse id="nav-text-collapse" is-nav>
-            <b-nav-item v-on:click="state=0">Home</b-nav-item>
-            <b-nav-item v-on:click="state=1">Universum</b-nav-item>
-            <b-nav-item v-on:click="state=2">Pen and Paper</b-nav-item>
-            <b-nav-item v-on:click="state=3">Conan Exiles</b-nav-item>
-            <b-nav-item align="right">
-            <a href="http://localhost:5000/routes/api/discord/login"
-               style="
-            color: white;
-            padding: 5px 10px;
-            background: #7289DA;
-            line-height: 35px;
-            color: #fff;
-            font-family: 'Helvetica', 'Arial', sans-sefir;
-            border-radius: 3px;
-        ">
-              Login through discord
-            </a></b-nav-item>
-          </b-collapse>
+    <b-navbar tag="nav" type="dark" variant="dark" toggleable="md" sticky>
+        <b-navbar-brand tag="h1" v-on:click="state=0">
+            Conan RPG Site
+        </b-navbar-brand>
+        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+        <b-collapse id="nav-collapse" is-nav>
+            <b-navbar-nav>
+                <b-nav-item v-on:click="state=0">Home</b-nav-item>
+                <b-nav-item v-on:click="state=1">Universum</b-nav-item>
+                <b-nav-item v-on:click="state=2">Pen and Paper</b-nav-item>
+                <b-nav-item v-on:click="state=3">Conan Exiles</b-nav-item>
+            </b-navbar-nav>
+      <b-navbar-nav class="ml-auto">
+          <b-nav-item href="http://localhost:5000/routes/api/discord/login"
+                      style="
+                        color: white;
+                        background: #7289DA;
+                        line-height: 35px;
+                        color: #fff;
+                        font-family: 'Helvetica', 'Arial', sans-sefir;
+                        border-radius: 3px;"
+          >
+            Login through discord
+          </b-nav-item>
         </b-navbar-nav>
+        </b-collapse>
     </b-navbar>
 
     <div class="main">
@@ -85,12 +86,11 @@
   color: #2c3e50;
   }
 body {
-  min-height: 100vh;
-
-  background-image: url("assets/backgroundPic.jpg");
-  background-size: 100% 100%;
-    
-
+  background: url("assets/BackgroundConan.jpg"), linear-gradient(#3e3629, #382517);
+    background-attachment: fixed;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 div.main {
   margin: 40px 0px;
