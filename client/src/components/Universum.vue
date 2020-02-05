@@ -1302,10 +1302,7 @@ e
     .beschreibung{
         color: #ffffff;
         background-color: #382517;
-        margin-top: -450px;
-        width: 925px;
-        margin-left: 100px;
-
+        margin: 30px;
     }
     .hintergrund{
         background-color: #382517;
