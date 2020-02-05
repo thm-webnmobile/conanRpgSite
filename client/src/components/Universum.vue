@@ -1,7 +1,7 @@
 <template>
     <b-container class="Universum">
-
-        <p>
+        <div class="hintergrund">
+        <p class="ueberschrift">
             Hier findest du eine kleine Übersicht über das Universum von Conan: Wo leben welche Völker und was macht sie aus?
             Finde es mit unserer interaktiven Karte heraus!
         </p>
@@ -52,11 +52,11 @@
             </g>
         </svg>-->
 
-        <div class="mapdiv">
+       <!-- <div class="mapdiv">-->
 
             <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                 viewBox="0 0 2000 1389" style="enable-background:new 0 0 2000 1389;" xml:space="preserve">
-                <g>
+                 viewBox="320 300 2000 1389" style="enable-background:new 0 0 0;" >
+                <g class=" inbox">
      <a xlink:title="Khitai" xlink:href="https://hyboria.xoth.net/gazetteer/khitai.htm">
 	<path class="st0" d="M1247.88,335.31c56.3,0,112.61,0,168.91,0c0.67,0.71,1.74,1.47,1.58,2.37c-1.12,6.26,3.69,8.65,7.45,11.75
 		c3.58,3.14,9.14,3.88,11.02,9.18c0.38,1.06,1.88,1.16,3.11,0.9c7.2-1.5,10.76-0.02,14.71,5.95c1.66,2.5,4,4.44,6.19,6.4
@@ -1210,9 +1210,9 @@ e
 </svg>
 
 
-        </div>
+        <!--</div>-->
 
-
+        <div class="beschreibung">
         <h3>Cimmerier</h3>
         <p>
             Die Cimmerier, barbarisch und kriegerisch.
@@ -1225,7 +1225,11 @@ e
             Im aktuellen Zeitalter befinden sich große Teile ihrer Gesellschaft noch in der Steinzeit,
             auch wenn sie bisweilen Werkzeuge und Waffen aus Eisen benutzen.
             Conan der Barbar selbst ist ein Cimmerier, weshalb er auch als Conan der Cimmerier bezeichnet wird.
+
+
         </p>
+        </div>
+        </div>
     </b-container>
 
 </template>
@@ -1271,21 +1275,49 @@ e
         fill: #3983ab;
     }
 */
-    .mapdiv{
-        width:auto;
-        margin: auto;
+    #Ebene_1{
+
+        width: 150%;
         border-color: #040D22;
         border-width: thin;
     }
 
-    .mapdiv path{
+    .inbox{
+        float: left;
+    }
+
+
+    #Ebene_1 path{
         stroke: #040D22;
         stroke-width: 1px;
     }
 
-    .mapdiv path:hover{
+    #Ebene_1 path:hover{
         fill: azure;
     }
+    h3{
+        color: #ffffff;
+        background-color: #382517;
+    }
+    .beschreibung{
+        color: #ffffff;
+        background-color: #382517;
+        margin-top: -450px;
+        width: 925px;
+        margin-left: 100px;
+
+    }
+    .hintergrund{
+        background-color: #382517;
+        border-radius: 5px;
+        padding-bottom: 30px;
+        padding-top: 30px;
+    }
+
+    .ueberschrift{
+        color: #ffffff;
+    }
+
     .st0{fill:#BDB573;}
     .st1{fill:#DEAE8F;}
     .st2{fill:#AFCB88;}

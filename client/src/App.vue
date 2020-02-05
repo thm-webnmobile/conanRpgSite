@@ -86,6 +86,11 @@
   }
 body {
   min-height: 100vh;
+
+  background-image: url("assets/backgroundPic.jpg");
+  background-size: 100% 100%;
+    
+
 }
 div.main {
   margin: 40px 0px;
