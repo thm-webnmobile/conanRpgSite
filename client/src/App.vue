@@ -2,15 +2,29 @@
   <div id="app">
     <b-navbar tag="nav" type="dark" variant="dark" sticky>
       <b-navbar-brand tag="h1" v-on:click="state=0">
-        Conan Rollenspiele
+        Conan RPG Site
       </b-navbar-brand>
-      <b-navbar-nav>
-        <b-nav-item v-on:click="state=0">Home</b-nav-item>
-        <b-nav-item v-on:click="state=1">Universum</b-nav-item>
-        <b-nav-item v-on:click="state=2">Pen and Paper</b-nav-item>
-        <b-nav-item v-on:click="state=3">Conan Exiles</b-nav-item>
-        <b-nav-item v-on:click="state=4">Profil</b-nav-item>
-      </b-navbar-nav>
+        <b-navbar-nav>
+          <b-collapse id="nav-text-collapse" is-nav>
+            <b-nav-item v-on:click="state=0">Home</b-nav-item>
+            <b-nav-item v-on:click="state=1">Universum</b-nav-item>
+            <b-nav-item v-on:click="state=2">Pen and Paper</b-nav-item>
+            <b-nav-item v-on:click="state=3">Conan Exiles</b-nav-item>
+            <b-nav-item align="right">
+            <a href="http://localhost:5000/routes/api/discord/login"
+               style="
+            color: white;
+            padding: 5px 10px;
+            background: #7289DA;
+            line-height: 35px;
+            color: #fff;
+            font-family: 'Helvetica', 'Arial', sans-sefir;
+            border-radius: 3px;
+        ">
+              Login through discord
+            </a></b-nav-item>
+          </b-collapse>
+        </b-navbar-nav>
     </b-navbar>
 
     <div class="main">
