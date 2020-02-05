@@ -9,7 +9,7 @@
     </b-container>
 </template>
 <script>
-    import Carousel from "./Carousel";
+    import Carousel from "./CarouselPnp";
     export default {
         name: "PNP",
         components: {
