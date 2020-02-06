@@ -4,7 +4,7 @@ var url = "mongodb://localhost:27017/";
 MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("conan");
-    dbo.createCollection("customers", function(err, res) {
+    dbo.createCollection("DiscordUser", function(err, res) {
         if (err) throw err;
         console.log("Collection created!");
         db.close();
